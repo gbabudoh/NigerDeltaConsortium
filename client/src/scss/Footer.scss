@@ -1,0 +1,70 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 33px;
+    margin-top: 10px;
+
+    .footer-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #b9b7b7;
+        padding: 20px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+
+        h3 {
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+
+            li {
+                margin-bottom: 5px;
+            }
+        }
+
+        .social-icons {
+            a {
+                margin: 0 5px;
+                font-size: 24px;
+                color: #0b76a8;
+                margin: 10px;
+
+                &:hover {
+                    color: #007bff;
+                }
+            }
+        }
+
+        .footer-logo {
+            max-width: 60px;
+            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 15px; // Adjust padding for mobile
+    }
+
+    // Placing the .footer-bottom inside the grid, but only under the middle column
+    .footer-bottom {
+        grid-column: 2;
+        text-align: center;
+        margin-top: 20px;
+        padding: 10px;
+        font-size: 0.8em;
+        color: #666;
+
+        @media (max-width: 768px) {
+            grid-column: auto; // Reset grid-column for mobile
+        }
+    }
+}

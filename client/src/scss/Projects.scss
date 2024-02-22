@@ -1,0 +1,111 @@
+.project {
+    display: flex;
+    height: 100vh;
+    .tabs, .tab-content {
+      flex: 1;
+      overflow: auto;
+      margin-top: 120px;
+    }
+  
+    .tabs {
+      display: flex;
+      flex-direction: column;
+      background-color: #f7f7f7;
+      .tab {
+        padding: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &.completed {
+          background-color: #d9d9f8;
+        }
+        &.not-started {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+
+ 
+    .divider {
+      background-color: #ccc;
+      width: 10px;
+      margin: 0 15px;
+    }
+
+    .projects-h2 {
+      text-align: left;
+      background: gainsboro;
+      color: #000;
+      padding: 15px;
+    }
+
+
+
+  
+    .tab-content {
+      padding: 20px;
+      .content {
+        h2 {
+          margin-top: 0;
+        }
+        p {
+          margin: 10px 0;
+        }
+        .tracker {
+          margin-top: 20px;
+          padding: 10px;
+          border-radius: 5px;
+          text-align: center;
+          position: relative;
+          &.ongoing {
+            background-color: lightgreen;
+          }
+          &.completed {
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 100%;
+              width: 100%;
+              background-color: #4A90E2;
+              z-index: -1;
+            }
+            color: white;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column; // Ensures a vertical layout for mobile
+      height: auto; // Adjusts height to content
+      margin-top: -30px;
+
+      .tabs {
+        flex-direction: row; // Keeps tabs in a row for wider screens
+        overflow-x: auto; // Allows horizontal scrolling for tabs
+        white-space: nowrap; // Prevents tabs from wrapping
+        background-color: transparent; // Resets background for a cleaner look
+
+        .tab {
+          display: inline-block; // Tabs display inline for scrolling
+          margin-right: 10px; // Adds space between tabs
+        }
+      }
+
+      .tab-content {
+        margin-top: 20px; // Adjusts spacing between tabs and content
+      }
+
+      .tabs {
+        flex-direction: column; // Changes tabs to stack vertically only on responsive
+        overflow-x: visible; // Removes horizontal scroll since tabs are stacking
+        white-space: normal; // Allows normal text wrapping for vertical layout
+
+        .tab {
+          display: block; // Each tab displays as a block, one on top of another
+          margin-right: 0; // Removes right margin as it's no longer needed
+        }
+      }
+    }
+}

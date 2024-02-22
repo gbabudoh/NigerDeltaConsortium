@@ -1,0 +1,94 @@
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+  background: #ececec;
+
+  .registration-logo {
+      display: block;
+      margin: 0 auto;
+      max-width: 100px; // Adjust this value as needed
+      height: auto;
+      margin-bottom: 10px;
+  }
+
+  h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 34px;
+      @media (max-width: 768px) {
+          font-size: 20px;
+      }
+  }
+
+  form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+
+      input, button, .dropdown {
+          margin-bottom: 10px;
+          padding: 10px;
+          font-size: 16px;
+          border-radius: 4px;
+          width: 100%; // Ensures dropdowns match the width of input fields
+      }
+
+      input, .dropdown {
+          border: 1px solid #ccc;
+          background-color: #fff; // Ensures a consistent background
+          &:focus {
+              outline: none;
+              border-color: blue;
+              box-shadow: 0 0 0 2px rgba(0, 0, 255, 0.2);
+          }
+      }
+
+      .dropdown {
+          -webkit-appearance: none; // Removes default styling on iOS
+          -moz-appearance: none; // Removes default styling on Firefox
+          appearance: none; // Ensures custom styles are used
+          position: relative;
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>'); // Adds a custom dropdown arrow
+          background-repeat: no-repeat;
+          background-position: right 10px center;
+          background-size: 16px;
+      }
+
+      button {
+          background-color: #065275;
+          color: white;
+          border: none;
+          cursor: pointer;
+
+          &:hover {
+              background-color: darkblue;
+          }
+      }
+
+      @media (max-width: 768px) {
+          width: 90%;
+      }
+  }
+}
+
+/* Additional responsiveness for very small devices */
+@media (max-width: 480px) {
+  .registration-container form input, 
+  .registration-container form button, 
+  .registration-container form .dropdown {
+      padding: 8px;
+      font-size: 14px;
+  }
+
+  .registration-container h1 {
+      font-size: 18px;
+  }
+}

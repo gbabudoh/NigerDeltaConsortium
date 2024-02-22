@@ -1,0 +1,65 @@
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin-top: 120px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr); // Adjust for tablets
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr; // Adjust for mobiles
+  }
+}
+
+
+.event {
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  h2, p {
+    margin: 10px 0;
+  }
+
+  
+
+  // Updated styles for anchor tag to mimic button appearance
+  .register-button {
+    padding: 12px;
+    background-color: #007bff; // Primary button color
+    color: white; // Text color
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: auto; // Pushes the button to the bottom if using flex
+    transition: background-color 0.3s ease; // Smooth transition for hover effect
+    text-decoration: none; // Removes underline from links
+    display: inline-block; // Allows padding and width adjustments
+    text-align: center; // Ensures text is centered
+    width: 100%; // Makes the anchor fill the container
+
+    &:hover {
+      background-color: #0056b3; // Darker shade for hover
+    }
+
+    &:focus {
+      outline: none; // Removes the default focus outline
+      box-shadow: 0 0 0 2px rgba(0,123,255,0.5); // Adds a custom focus style
+    }
+  }
+}

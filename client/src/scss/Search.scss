@@ -1,0 +1,70 @@
+$search-bar-padding: 10px;
+$search-results-margin-top: 20px;
+$border-color: #797575;
+$navbar-height: 120px; // Adjust based on your navbar's height
+$footer-height: 120px; // Adjust based on your footer's height
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: start; // Align items to the start to prevent stretching
+  padding: $navbar-height 20px $footer-height; // Adjust top and bottom padding
+  min-height: calc(100vh - #{$navbar-height} - #{$footer-height}); // Ensure container fits between navbar and footer without overlap
+
+  .search-box {
+    width: 100%;
+    display: flex; // Ensure this container is flexible
+    flex-direction: column; // Stack children vertically
+    align-items: center; // Center children horizontally
+    max-width: none; // Override max-width for full width usage
+
+    input[type="text"], button {
+      width: 100%;
+      max-width: 500px; // Keep the search bar and buttons reasonably sized
+      padding: $search-bar-padding;
+      margin: 0 auto; // Center these elements
+      margin-top: $search-results-margin-top;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+
+    button, .refresh-button {
+      cursor: pointer;
+      background: #065275; // Primary button color
+      border: none;
+      color: white;
+    }
+
+    .refresh-button {
+      background-color: #4CAF50; // Refresh button color
+    }
+
+    .search-results {
+      width: calc(100% - 40px); // Adjust width to nearly full viewport width, accounting for some padding
+      margin: 20px auto; // Center it with automatic margins
+      padding: $search-bar-padding;
+      border: 1px solid $border-color;
+      overflow-y: auto; // Enable vertical scrolling for overflow
+      max-height: 50vh; // Limit height to prevent overflow
+
+      h2, h3, h4 { // Adjust according to your specific heading tags
+        margin-top: 20px; // Increased margin-top for headings
+        margin-bottom: 10px; // Space below headings before the description starts
+      }
+
+      p { // Assuming your descriptions are wrapped in <p> tags
+        margin-bottom: 20px; // Increased bottom margin for paragraph spacing
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .search-container {
+    padding: $navbar-height 10px $footer-height; // Adjust padding for smaller screens
+  }
+  .search-box .search-results {
+    width: calc(100% - 20px); // Adjust width for smaller screens
+    max-height: 60vh; // Adjust max-height for better fit on smaller screens
+  }
+}

@@ -1,0 +1,82 @@
+.front-page {
+    padding: 0 20px; // Padding on both sides of the page
+
+    .title-section {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 30px; // Margin below the title
+        color: #000;
+    }
+
+    .grid-section {
+        border-radius: 5px; // Optional: rounded corners for the grid section
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // 2 columns layout
+        gap: 20px; // Space between grid items
+        padding: 20px; // Padding inside the grid-section
+        margin: 0 auto; // Centers the grid and provides margin
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr; // Single column for tablet and smaller devices
+            padding: 0;
+        }
+    }
+
+    .grid-item {
+        border: 1px solid #ccc; // 1px solid border for each grid item
+        border-radius: 8px; // Optional: rounded corners for grid items
+        padding: 0; // Padding inside each grid item
+        display: flex;
+        flex-direction: column;
+        
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: cover; // Ensures the image covers the grid item
+            margin-bottom: 10px; // Margin below the image
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        h2, p {
+            margin: 10px 0;
+            align-items: left;    
+            padding: 5px;       
+        }
+
+        .item-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+            padding: 5px;
+
+            .read-more {
+                background-color: #065275; // Blue background for the button
+                color: white; // White text color for better contrast
+                border: none; // Remove border for a cleaner look
+                padding: 10px 15px; // Adjust padding as needed
+                text-align: center;
+                text-decoration: none; // Remove underline (if any)
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-radius: 6px;
+                transition: background-color 0.3s; // Smooth transition for hover effect
+
+                &:hover {
+                    background-color: #0b76a8; // Darker blue on hover for a subtle effect
+                }
+            }
+
+            .logo-watermark {
+                width: 25px; // Reduce size of the watermark logo
+                height: auto;
+                opacity: 0.6; // Apply watermark effect
+                margin-left: auto; // Aligns the logo to the right
+            }
+        }
+    }
+}

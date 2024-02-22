@@ -1,0 +1,77 @@
+.slider {
+    width: 100%;
+    height: 680px;
+    position: relative;
+    overflow: hidden;
+	margin-top: 50px;
+  
+    .arrow {
+        position: absolute;
+        bottom: 10px; // Positioned at the very bottom
+        left: 50%; // Align center horizontally
+        transform: translateX(-50%); // Center align the arrow
+        cursor: pointer;
+        z-index: 10;
+        font-size: 15px; // Size of the arrow icons updated to 20px
+        color: #fff; // Color of the arrow icons
+        border: 4px solid #fff; // Border for the arrow icons
+        border-radius: 50%;
+        padding: 10px;
+        background-color: #0b76a8;
+
+        &.left-arrow {
+            margin-left: -50px; // Shift left arrow to the left
+        }
+
+        &.right-arrow {
+            margin-left: 10px; // Shift right arrow to the right
+        }
+    }
+  
+    .slide {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+  
+        .content {
+            width: 300px; // Width of the content box
+            height: 300px; // Height of the content box
+            margin-right: 50px; // Margin to keep it inside the banner image
+            border: 6px solid #fff; // Border for content box
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; // Centered alignment for text
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.5); // Semi-transparent background
+            box-sizing: border-box;
+            color: #fff;
+            font-weight: 700;
+
+            h1, h3 {
+                color: #fff;
+                text-align: center; // Center-aligned text
+                margin: 10px 0; // Spacing between h1 and h3
+                margin-top: -6px;
+            }
+        }
+    }
+  
+    @media (max-width: 768px) {
+        height: 300px; // Adjust height for smaller screens
+  
+        .slide {
+            .content {
+                width: 150px; // Adjust width for smaller screens
+                height: 130px; // Adjust height for smaller screens
+                margin-right: 20px; // Adjust margin for smaller screens
+                padding: 15px; // Adjust padding for smaller screens
+                margin-right: -0.1px; //adjust the marging to the right
+            }
+        }
+    }
+}
